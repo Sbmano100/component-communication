@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Vendormodel } from 'src/app/vendormodel';
 import { VendorserviceService } from 'src/app/vendorservice.service';
 
 @Component({
@@ -13,5 +14,9 @@ export class VendorComponent implements OnInit {
   vendorlist=this.vendorservice.vendorList;
     ngOnInit(): void {
   }
-
+  list:Vendormodel={} as Vendormodel
+  childlist(event:Vendormodel){
+    this.list=event;
+    console.log(event);
+  }
 }

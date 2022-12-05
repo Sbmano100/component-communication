@@ -9,6 +9,7 @@ export class SharedService {
 
   vendorobs=new Subject<Vendormodel>(); //
   //vendor: Vendormodel={} as Vendormodel;
+  
   setvendor(v:Vendormodel){
     //this.vendor=v;
     this.vendorobs.next(v);             //
