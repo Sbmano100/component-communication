@@ -1,1 +1,19 @@
-<p>block-vendor works!</p>
+<p>Block vendor</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>name</th>
+            <th>age</th>
+            <th>city</th>
+          </tr>
+    </thead>
+    <tbody>
+        <tr *ngIf="vendorvalue">
+            <td>{{vendorvalue.name}}</td>
+            <td>{{vendorvalue.age}}</td>
+            <td>{{vendorvalue.city}}</td>
+            <td></td>
+          </tr>
+    </tbody>
+
+  </table>

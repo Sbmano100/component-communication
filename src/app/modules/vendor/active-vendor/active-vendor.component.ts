@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { SharedService } from 'src/app/shared.service';
+import { Vendormodel } from 'src/app/vendormodel';
 
 @Component({
   selector: 'app-active-vendor',
@@ -7,8 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ActiveVendorComponent implements OnInit {
 
-  constructor() { }
+  @Input() vendor:Vendormodel[]=[];
+  constructor(private sharedservices:SharedService) { }
 
+  selectedvendor?:Vendormodel;
+  onselectdisplay(vendor:Vendormodel):void{
+   // this.selectedvendor=vendor;
+    //console.log(this.selectedvendor);
+    this.sharedservices.setvendor(vendor);
+  }
   ngOnInit(): void {
   }
 

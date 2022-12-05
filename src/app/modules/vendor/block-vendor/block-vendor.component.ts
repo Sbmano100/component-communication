@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedService } from 'src/app/shared.service';
+import { Vendormodel } from 'src/app/vendormodel';
 
 @Component({
   selector: 'app-block-vendor',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlockVendorComponent implements OnInit {
 
-  constructor() { }
+  Selectedvendor?:Vendormodel;
+  vendorvalue:Vendormodel={} as Vendormodel;
+  constructor(private sharedservices:SharedService) { }
 
   ngOnInit(): void {
+
+    this.sharedservices.vendorobs.subscribe((data)=>{
+      this.vendorvalue=data;
+      console.log("data: ", this.vendorvalue);
+    })
   }
+
+  // display(){
+  //   console.log(this.Selectedvendor);
+  // }
 
 }
